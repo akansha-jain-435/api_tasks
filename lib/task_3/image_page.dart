@@ -34,7 +34,7 @@ class _ImagePageState extends State<ImagePage> {
             child: ListView.separated(
               itemCount: images.length,
               separatorBuilder: (BuildContext context, int index) {
-                return Divider();
+                return const Divider();
               },
               itemBuilder: (BuildContext context, int index) {
                 return Column(

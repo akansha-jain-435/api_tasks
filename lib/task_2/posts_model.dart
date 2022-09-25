@@ -15,8 +15,8 @@ class PostsModel {
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['userId'] = userId;
-    data['id'] = id;
+    data['userId'] = userId.toString();
+    data['id'] = id.toString();
     data['title'] = title;
     data['body'] = body;
     return data;

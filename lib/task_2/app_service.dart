@@ -15,6 +15,20 @@ class AppService {
     return data;
   }
 
+  Future<String> postPosts(PostsModel postsModel) async {
+    const url = 'https://jsonplaceholder.typicode.com/posts';
+    var response = await http.post(
+      Uri.parse(url),
+      body: postsModel.toJson(),
+    );
+    print(response.statusCode);
+    if (response.statusCode == 201) {
+      return 'Created';
+    } else {
+      return 'Error';
+    }
+  }
+
   Future<List<ImagesModel>> getImage() async {
     const url = 'https://jsonplaceholder.typicode.com/photos';
     var images = await http.get(Uri.parse(url));

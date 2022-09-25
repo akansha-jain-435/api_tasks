@@ -1,5 +1,6 @@
 import 'package:api_tasks/task_2/post_page.dart';
 import 'package:api_tasks/task_3/image_page.dart';
+import 'package:api_tasks/task_4/post_api_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -16,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'API Tasks',
-      home: ImagePage(),
+      home: PostApiPage(),
     );
   }
 }
