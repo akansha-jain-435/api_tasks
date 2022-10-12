@@ -1,7 +1,14 @@
-import 'package:api_tasks/task_2/post_page.dart';
-import 'package:api_tasks/task_3/image_page.dart';
-import 'package:api_tasks/task_4/post_api_page.dart';
+import 'package:api_tasks/animation.dart';
+import 'package:api_tasks/animation_basic.dart';
+import 'package:api_tasks/task_5/post_api_future.dart';
+import 'package:api_tasks/task_5/post_future_page.dart';
+import 'package:api_tasks/task_6/bloc/api_bloc_bloc.dart';
+import 'package:api_tasks/task_6/task_6_ui.dart';
+import 'package:api_tasks/textfield_bloc/bloc/textfield_bloc.dart';
+import 'package:api_tasks/textfield_bloc/home.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() => runApp(const MyApp());
 
@@ -15,9 +22,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'API Tasks',
-      home: PostApiPage(),
+      home: BlocProvider(
+        create: (context) => ApiBlocBloc(),
+        child: BlocUI(),
+      ),
     );
   }
 }
