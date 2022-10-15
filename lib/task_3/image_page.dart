@@ -14,7 +14,7 @@ class ImagePage extends StatefulWidget {
 class _ImagePageState extends State<ImagePage> {
   List<ImagesModel> images = [];
 
-  void changeImage() async {
+  void getImage() async {
     images = await AppService().getImage();
     setState(() {});
   }
@@ -26,7 +26,7 @@ class _ImagePageState extends State<ImagePage> {
         children: [
           TextButton(
             onPressed: () {
-              changeImage();
+              getImage();
             },
             child: const Text('Click'),
           ),

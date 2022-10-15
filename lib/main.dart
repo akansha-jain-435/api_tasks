@@ -1,5 +1,8 @@
 import 'package:api_tasks/animation.dart';
 import 'package:api_tasks/animation_basic.dart';
+import 'package:api_tasks/task_3/bloc/image_bloc.dart';
+import 'package:api_tasks/task_3/image_bloc_page.dart';
+import 'package:api_tasks/task_3/image_page.dart';
 import 'package:api_tasks/task_5/post_api_future.dart';
 import 'package:api_tasks/task_5/post_future_page.dart';
 import 'package:api_tasks/task_6/bloc/api_bloc_bloc.dart';
@@ -24,9 +27,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'API Tasks',
+      // home: ImagePage(),
       home: BlocProvider(
-        create: (context) => ApiBlocBloc(),
-        child: BlocUI(),
+        create: (context) => ImageBloc(),
+        child: const ImageBlocPage(), // to whom the BLoC needs to be provided
       ),
     );
   }
